@@ -1,23 +1,7 @@
 <?php
-    if (isset($_GET['new'])) {
-        require_once '.' .$_GET['new'].'.php';
-    }
-?>
-
-<?php
-if (isset($_POST['task'])) {
-    $texto = $_POST['task'];
-  
-    $arquivo = fopen('task.txt', 'a');
-    fwrite($arquivo, $texto . "\n");
-    fclose($arquivo);
-}
-?>
-<?php
-$arquivo = 'task.txt';
-$fp = fopen($arquivo,'r');
-$texto = fread($fp, filesize($arquivo));
-$texto = nl2br($texto);
+$db = parse_url(getenv("postgres://hgeqjxmwfmbujl:1bde68c14fa3f627ae70c6107d5945d785b671c696e7839a7888aca6d17894b8@ec2-54-86-170-8.compute-1.amazonaws.com:5432/d11r24rr0egnvj"));
+$db["path"] = ltrim($db["path"], "/");
+$conn = pg_connect(getenv("postgres://hgeqjxmwfmbujl:1bde68c14fa3f627ae70c6107d5945d785b671c696e7839a7888aca6d17894b8@ec2-54-86-170-8.compute-1.amazonaws.com:5432/d11r24rr0egnvj"));
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +25,7 @@ $texto = nl2br($texto);
         </thead>
         <tbody>
             <tr>
-                <td class= "task"><p class="teste"> <? echo mb_strtolower( $texto, 'UTF-8' ); ?> </p></th>
+                <td class= "task"><p class="teste"> <? $conn = pg_connect(getenv("postgres://hgeqjxmwfmbujl:1bde68c14fa3f627ae70c6107d5945d785b671c696e7839a7888aca6d17894b8@ec2-54-86-170-8.compute-1.amazonaws.com:5432/d11r24rr0egnvj")); ?> </p></th>
             </tr>
         </tbody>
     </table>
