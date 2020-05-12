@@ -1,9 +1,9 @@
 <?php
 
-$host = "ec2-54-80-184-43.compute-1.amazonaws.com";
-$user = "pgqrqmlnduoyap";
-$password = "f59f4817b2fc6f141faf2e4f0392db0344ce1f519c48e49008d32102e03dddab";
-$dbname = "d7egh9299h16ck";
+$host = "ec2-54-86-170-8.compute-1.amazonaws.com";
+$user = "hgeqjxmwfmbujl";
+$password = "1bde68c14fa3f627ae70c6107d5945d785b671c696e7839a7888aca6d17894b8";
+$dbname = "d11r24rr0egnvj";
 $port = "5432";
 
 try{
