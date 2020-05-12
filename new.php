@@ -1,5 +1,21 @@
 <?php
-parse_url("postgres://hgeqjxmwfmbujl:1bde68c14fa3f627ae70c6107d5945d785b671c696e7839a7888aca6d17894b8@ec2-54-86-170-8.compute-1.amazonaws.com(opens in new tab):5432/d11r24rr0egnvj");
-$conn = pg_connect("postgres://hgeqjxmwfmbujl:1bde68c14fa3f627ae70c6107d5945d785b671c696e7839a7888aca6d17894b8@ec2-54-86-170-8.compute-1.amazonaws.com(opens in new tab):5432/d11r24rr0egnvj");
-header('location: /');
-?>
+
+$host = "ec2-54-80-184-43.compute-1.amazonaws.com";
+$user = "pgqrqmlnduoyap";
+$password = "f59f4817b2fc6f141faf2e4f0392db0344ce1f519c48e49008d32102e03dddab";
+$dbname = "d7egh9299h16ck";
+$port = "5432";
+
+try{
+    $dsn = "pgsql:host=" . $host . ";port=" . $port .";dbname=" . $dbname . ";user=" . $user . ";password=" . $password . ";";
+
+
+  $pdo = new PDO($dsn, $user, $password);
+  $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
+  $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+echo 'Connection failed: ' . $e->getMessage();
+}
+  ?>
