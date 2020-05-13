@@ -1,0 +1,14 @@
+heroku login
+heroku create name
+git init
+git remote add heroku https://git.heroku.com/postgres4528.git
+git add .
+git commit -m "name"
+git push heroku master
+heroku labs:enable --app=postgres4528 runtime-new-layer-extract
+heroku stack:set container
+
+comandos de ajuda:
+git remote add origin url
+git remote set-url origin git://new.url.here
+git remote remove origin
