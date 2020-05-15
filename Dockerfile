@@ -5,4 +5,4 @@ COPY index.php .
 COPY new.php . 
 COPY .htaccess .
 RUN a2enmod rewrite
-RUN apt-get install -y php-pgsql
+RUN docker-php-ext-install pgsql
