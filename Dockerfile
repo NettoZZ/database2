@@ -5,5 +5,4 @@ COPY index.php .
 COPY new.php . 
 COPY .htaccess .
 RUN a2enmod rewrite
-RUN echo "deb https://ftp.de.debian.org/debian stretch main" >> /etc/apt/sources.list
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y php-pgsql
+RUN apt-get install -y php-pgsql
