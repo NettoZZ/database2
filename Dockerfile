@@ -5,4 +5,4 @@ COPY index.php .
 COPY new.php . 
 COPY .htaccess .
 RUN a2enmod rewrite
-RUN sudo apt-get install php5-pgsql
+RUN apt-get install php5-pgsql
