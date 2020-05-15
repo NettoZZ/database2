@@ -9,4 +9,8 @@ RUN apt-get update
 RUN apt-get install -y libpq-dev \
 	&& docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
 	&& docker-php-ext-install pdo pdo_pgsql pgsql
-RUN service postgresql start
+RUN postgres
+RUN initdb --locate en_US.UTF-8 -D /var/lib/postgres/data
+RUN exit
+RUN systemctl start postgresql
+RUN systemctl status postgresql
