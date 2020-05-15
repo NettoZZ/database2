@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Lista PHP </title>
+    <title> TODOLIST PHP </title>
 </head>
 <body>
     <div class="heading">   
-        <h2> Minha Lista </h2>
+        <h2> Minha Lista: </h2>
     </div> 
     <form method="POST" action="new.php">
         <input type="text" name="task" class="task_input">
