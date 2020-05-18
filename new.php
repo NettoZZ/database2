@@ -1,6 +1,36 @@
 <?php
-$db = parse_url(getenv("postgres://zyazrgmcqradjd:571ca784b8de731a6991ca8a1b3f8c69f836f69bd7867e2cf760b69eade57dfe@ec2-52-44-166-58.compute-1.amazonaws.com:5432/d406gfnvmvbvdi"));
-$db["path"] = ltrim($db["path"], "/");
-$conn = pg_connect(getenv("postgres://zyazrgmcqradjd:571ca784b8de731a6991ca8a1b3f8c69f836f69bd7867e2cf760b69eade57dfe@ec2-52-44-166-58.compute-1.amazonaws.com:5432/d406gfnvmvbvdi"));
-?>
+$dburl=getenv("DATABASE_URL");
+$conn = pg_connect($dburl);
+// $query= "CREATE TABLE tarefas (
+//     id serial,
+//     descricao   varchar(255),
+//     status varchar(255)
+//     )";
+// pg_query ($conn , $query);
+$table = "tarefas";
+$dados = [
+    'descricao' => 'Minha tarefa',
+//    'status' => 'Pendente'
+];
+pg_insert($conn, $table, $dados);
+$dados = [
+    'descricao' => 'Segunda tarefa',
+//    'status' => 'Finalizada'
+];
+pg_insert($conn, $table, $dados);
+$dados = [
+    'descricao' => 'Terceira tarefa',
+//   'status' => 'Finalizada'
+];
+pg_insert($conn, $table, $dados);
+$query= "SELECT id, descricao, status
+    FROM tarefas";
+$resultados= pg_query ($conn , $query);
+var_dump($resultados);
+$resultados2= pg_fetch_array ($resultados);
+var_dump($resultados2[1]);
 
+while($minhalinha=pg_fetch_array ($resultados)){
+    echo $minhalinha["descricao"]."<br>";
+}
+?>

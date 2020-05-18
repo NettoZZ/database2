@@ -1,4 +1,10 @@
 version: "3"
 services:
   webapp:
+    volumes:
+     - ./:/var/www/html
     build: .
+    env_file: env
+  meubanco:
+    image: postgres
+    env_file: env2
