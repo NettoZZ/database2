@@ -1,4 +1,11 @@
-<?php include ('new.php')?>
+<?php
+$dburl=getenv("DATABASE_URL");
+$conn = pg_connect($dburl);
+$query2= "SELECT id, descricao, status
+    FROM tarefas5";
+$resultados= pg_query ($conn , $query2);
+$resultados2= pg_fetch_array ($resultados);
+?>
 
 <!DOCTYPE html>
 <html>
@@ -21,7 +28,7 @@
         </thead>
         <tbody>
             <tr>
-                <td class= "task"><p class="teste">  </p></th>
+                <td class= "task"><p class="teste"><?php while($minhalinha=pg_fetch_array ($resultados)){echo $minhalinha["descricao"]. "<br>";} ?></p></th>
             </tr>
         </tbody>
     </table>
