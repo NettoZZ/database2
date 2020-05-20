@@ -4,7 +4,6 @@ $conn = pg_connect($dburl);
 $query2= "SELECT id, descricao, status
     FROM tarefas5";
 $resultados= pg_query ($conn , $query2);
-$resultados2= pg_fetch_array ($resultados);
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +15,7 @@ $resultados2= pg_fetch_array ($resultados);
     <div class="heading">   
         <h2> Minha Lista: </h2>
     </div> 
-    <form method="POST" action="new.php">
+    <form method="POST" action="/new">
         <input type="text" name="task" class="task_input">
         <button href="new" type="submit" class="add_bnt" name="submit">Adicionar</button>
     </form> <br>
