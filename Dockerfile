@@ -4,7 +4,7 @@ ENV PORT=80
 RUN a2enmod rewrite
 RUN apt-get update
 RUN apt-get install -y libpq-dev \
-	&& docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql
-COPY index.php .
-COPY new.php .
+	&& docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+	&& docker-php-ext-install pgsql
+COPY app/* /var/www/html/
 COPY .htaccess .
