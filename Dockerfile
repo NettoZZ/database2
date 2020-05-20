@@ -7,4 +7,4 @@ RUN apt-get install -y libpq-dev \
 	&& docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
 	&& docker-php-ext-install pgsql
 COPY app/* /var/www/html/
-COPY .htaccess .
+RUN ls

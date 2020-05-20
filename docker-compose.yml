@@ -2,6 +2,6 @@ version: "3"
 services:
   webapp:
     volumes:
-     - ./:/var/www/html
+     - ./app:/var/www/html
     build: .
     env_file: env
