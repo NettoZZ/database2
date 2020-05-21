@@ -15,7 +15,7 @@ $dados = [
 pg_insert($conn, $table, $dados);
 ?>
 <?php
-header('Location: / ');
+header('Location: /list ');
 ?>
 
 
