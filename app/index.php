@@ -1,10 +1,20 @@
 <?php
-    $url = (isset($_GET['url'])) ? $_GET['url']:'list.php';
-    $url = array_filter(explode('/',$url));
+    // $file = $_GET['url'].'.php';
             
-    $file = $url[0].'.php';
-            
-    if(is_file($file)){
-        include $file;
-    }            
+    // if(is_file($file)){
+    //     include $file;
+    // }else{
+    //     include 'list.php';
+    // }            
+?>
+<?php
+if ($_GET['url'] === null) {
+  include 'list.php';
+}
+if ($_GET['url'] === 'new') {
+  include 'new.php';
+}
+if ($_GET['url'] === 'delete') {
+  echo 'deletando';
+}
 ?>

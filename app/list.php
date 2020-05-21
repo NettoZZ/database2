@@ -1,4 +1,4 @@
-<?php
+ <?php
 $dburl=getenv("DATABASE_URL");
 $conn = pg_connect($dburl);
 $query2= "SELECT id, descricao, status
@@ -15,8 +15,8 @@ $resultados= pg_query ($conn , $query2);
         <h2> Minha Lista: </h2>
     </div> 
     <form method="POST" action="/new">
-        <input type="text" name="task" class="task_input">
-        <button href="new" type="submit" class="add_bnt" name="submit">Adicionar</button>
+        <input type="text" name="task">
+        <button href="new" type="submit" name="submit">Adicionar</button>
     </form> <br>
     <table>
         <thead>
