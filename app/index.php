@@ -1,4 +1,6 @@
+<?php require_once 'vendor/autoload.php'; ?>
 <?php
+
     // $file = $_GET['url'].'.php';
             
     // if(is_file($file)){

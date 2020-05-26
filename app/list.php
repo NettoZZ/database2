@@ -1,10 +1,4 @@
- <?php
-$dburl=getenv("DATABASE_URL");
-$conn = pg_connect($dburl);
-$query2= "SELECT id, descricao, status
-    FROM tarefas5";
-$resultados= pg_query ($conn , $query2);
-?>
+<?php require_once 'vendor/autoload.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +20,7 @@ $resultados= pg_query ($conn , $query2);
         </thead>
         <tbody>
             <tr>
-                <td class= "task"><p class="teste"><?php while($minhalinha=pg_fetch_array ($resultados)){echo $minhalinha["descricao"]. "<br>";} ?></p></th>
+                <td class= "task"><p class="teste"> <? new conndb; ?> </p></th>
             </tr>
         </tbody>
     </table>
