@@ -1,6 +1,11 @@
+<?php
+namespace app;
+class codemodel {
+
+}
+?>
 <?php require_once 'vendor/autoload.php'; ?>
 <?php
-class conndb {
 $dburl=getenv("DATABASE_URL");
 $conn = pg_connect($dburl);
 // $query2= "CREATE TABLE tarefas5 (
@@ -16,12 +21,10 @@ $dados = [
 ];
 pg_insert($conn, $table, $dados);
 }
-$dburl=getenv("DATABASE_URL");
-$conn = pg_connect($dburl);
 $query2= "SELECT id, descricao, status
     FROM tarefas5";
 $resultados= pg_query ($conn , $query2);
-while($minhalinha=pg_fetch_array ($resultados)){echo $minhalinha["descricao"]. "<br>";}} ?>
+while($minhalinha=pg_fetch_array ($resultados)){echo $minhalinha["descricao"]. "<br>";} ?>
 <?php
 header('Location: / ');
 ?>

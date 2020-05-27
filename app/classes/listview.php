@@ -1,11 +1,15 @@
-<?php require_once 'vendor/autoload.php'; ?>
+<?php
+namespace app;
+class listview {
+
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <title> TODOLIST PHPx </title>
 </head>
-<body>
-    <div class="heading">   
+<body> 
         <h2> Minha Lista: </h2>
     </div> 
     <form method="POST" action="/new">
