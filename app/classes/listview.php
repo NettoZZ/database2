@@ -1,9 +1,8 @@
 <?php
-namespace app;
-class listview {
-
-}
+$db2= new \app\codecontrol;
+$db1= new \app\codemodel;
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,9 +11,9 @@ class listview {
 <body> 
         <h2> Minha Lista: </h2>
     </div> 
-    <form method="POST" action="/new">
+    <form method="POST" action="<? $db1->db1(); ?>">
         <input type="text" name="task">
-        <button href="new" type="submit" name="submit">Adicionar</button>
+        <button>Adicionar</button>
     </form> <br>
     <table>
         <thead>
@@ -24,7 +23,7 @@ class listview {
         </thead>
         <tbody>
             <tr>
-                <td class= "task"><p class="teste"> <? new conndb; ?> </p></th>
+                <td class= "task"><p class="teste"><? $db2->db2(); ?></p></th>
             </tr>
         </tbody>
     </table>
