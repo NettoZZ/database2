@@ -2,6 +2,7 @@
 namespace app;
 class codemodel {
 function db1 (){
+    header('Location: /list');
     $dburl=getenv("DATABASE_URL");
     $conn = pg_connect($dburl);
     if (isset($_POST['task'])){
@@ -13,7 +14,6 @@ function db1 (){
     }
 }}
 ?>
-
 <?php
 // $query2= "CREATE TABLE tarefas5 (
 //     id serial,
@@ -22,4 +22,3 @@ function db1 (){
 //     )";
 // pg_query ($conn , $query2);
 ?>
-

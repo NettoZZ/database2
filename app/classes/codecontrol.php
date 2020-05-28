@@ -8,7 +8,7 @@ namespace app;
             $query2= "SELECT id, descricao, status
             FROM tarefas5";
             $resultados= pg_query ($conn , $query2);
-            while($minhalinha=pg_fetch_array ($resultados)){echo $minhalinha["descricao"]. "<br>";}
+            while($minhalinha=pg_fetch_array ($resultados)){echo $minhalinha['descricao']. "<br>";}
     }
 }
 ?>

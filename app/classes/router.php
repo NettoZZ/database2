@@ -6,9 +6,12 @@ public function processroutes () {
     $listcontrol = new \app\listcontrol();
     $listcontrol->process();
   }
-  if ($_GET["url"] === "code") {
-     $codecontrol = new \app\codecontrol();
-     $codecontrol->db2();
+  if ($_GET["url"] === "new") {
+     $codemodel = new \app\codemodel();
+     $codemodel->db1();
   }
+  if ($_GET["url"] === null) {
+    header('Location: /list');
+ }
 }
 }
