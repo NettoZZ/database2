@@ -1,6 +1,9 @@
 <?php
-$db2= new \app\codecontrol;
-$db1= new \app\codemodel;
+class listview {
+    public function echohtml($tasks) {
+    echo "<html>";
+    foreach ($tasks as $task) {echo $task . "<br/>";}
+}}
 ?>
 
 <!DOCTYPE html>
@@ -29,3 +32,4 @@ $db1= new \app\codemodel;
     </table>
 </body>
 </html>
+
