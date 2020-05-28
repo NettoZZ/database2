@@ -1,6 +1,6 @@
 <?php
 namespace app;
-    class codecontrol {
+    class newcontroller {
         public $resultados;
         function db2 () {
             $dburl=getenv("DATABASE_URL");

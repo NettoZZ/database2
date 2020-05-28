@@ -1,6 +1,6 @@
 <?php
 namespace app;
-class codemodel {
+class newmodel {
 function db1 (){
     header('Location: /list');
     $dburl=getenv("DATABASE_URL");

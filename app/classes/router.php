@@ -3,12 +3,12 @@ namespace app;
 class router {
 public function processroutes () {
   if ($_GET["url"] === "list") {
-    $listcontrol = new \app\listcontrol();
-    $listcontrol->process();
+    $listcontroller = new \app\listcontroller();
+    $listcontroller->process();
   }
   if ($_GET["url"] === "new") {
-     $codemodel = new \app\codemodel();
-     $codemodel->db1();
+     $newmodel = new \app\newmodel();
+     $newmodel->db1();
   }
   if ($_GET["url"] === null) {
     header('Location: /list');
